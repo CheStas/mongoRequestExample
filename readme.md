@@ -1,6 +1,6 @@
-db.students.find({scores: {$elemMatch: {score: {$gt: 87, $lt: 93}}}}).pretty()
+1. `db.students.find({scores: {$elemMatch: {score: {$gt: 87, $lt: 93}}}}).pretty()`
 
-db.students.aggregate([
+2. `db.students.aggregate([
     {
         $unwind: "$scores"
     },
@@ -10,6 +10,6 @@ db.students.aggregate([
             "scores.score" : {$gt: 90}
         }
     }
-])
+])`
 
-db.students.updateMany({name: "Dusti Lemmond"}, {$set: {'accepted': true}})
+3. `db.students.updateMany({name: "Dusti Lemmond"}, {$set: {'accepted': true}})`
